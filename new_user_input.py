@@ -23,4 +23,5 @@ def main():
     user_payload = create_user_payload(name, full_name, given_name, family_name, email_address)
     make_post_request(user_payload, api_url, username, password)
 
-main()
+if __name__ == "__main__":
+    main()

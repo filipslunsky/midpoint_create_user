@@ -1,4 +1,4 @@
-# This version of the script is more practical for muliple user creation neatly loaded from attached users.csv
+# This version of the script is more practical for muliple user creation neatly loaded from attached input_users.csv
 
 import csv
 from new_user_hardcoded import load_env_variables, create_user_payload, make_post_request
@@ -28,9 +28,10 @@ def load_data_from_csv(file_path):
 
 def main():
     api_url, username, password = load_env_variables()
-    users = load_data_from_csv("users.csv")
+    users = load_data_from_csv("input_users.csv")
     for name, full_name, given_name, family_name, email_address in users:
         user_payload = create_user_payload(name, full_name, given_name, family_name, email_address)
         make_post_request(user_payload, api_url, username, password)
 
-main()
+if __name__ == "__main__":
+    main()
