@@ -1,6 +1,9 @@
+# This script uses the funcs defined in new_user_hardcoded.py and takes the new user info as console input
+
 from new_user_hardcoded import load_env_variables, create_user_payload, make_post_request
 
 def get_user_input():
+    '''prompts user to input name, first_name, last_name, email of new user, returns tuple (name, full_name, given_name, family_name, email_address)'''
     name = input("Enter username: ").strip()
     given_name = input("Enter first name: ").strip()
     family_name = input("Enter last name: ").strip()

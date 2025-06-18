@@ -1,9 +1,13 @@
+# I have defined the main functions in this file to create a new user whose information needs to be hardcoded as args
+# the args go are to be passed to the func create_user_payload() in the main() func at the end of this file
+
 from dotenv import load_dotenv
 import requests
 import json
 import os
 
 def load_env_variables():
+    '''loads env variables and returns a tuple (API_URL, USERNAME, PASSWORD)'''
     load_dotenv()
 
     API_URL = os.getenv("API_URL")
@@ -16,6 +20,7 @@ def load_env_variables():
     return (API_URL, USERNAME, PASSWORD)
 
 def create_user_payload(name, full_name, given_name, family_name, email_address):
+    '''returns a single user dictionary ready to be dumped into JSON'''
     user_payload = {
         "user": {
             "name": name,
@@ -29,6 +34,7 @@ def create_user_payload(name, full_name, given_name, family_name, email_address)
     return user_payload
 
 def make_post_request(user_payload, api_url, username, password):
+    '''returns None, makes API request, prints response statuses'''
     headers = {
         "Content-Type": "application/json",
         "Accept": "application/json"    

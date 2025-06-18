@@ -1,7 +1,10 @@
+# This version of the script is more practical for muliple user creation neatly loaded from attached users.csv
+
 import csv
 from new_user_hardcoded import load_env_variables, create_user_payload, make_post_request
 
 def load_data_from_csv(file_path):
+    '''loads users from CSV and return a list of dictionaries'''
     try:
         with open(file_path, mode="r", encoding="utf-8") as file:
             reader = csv.reader(file)
