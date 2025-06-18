@@ -60,7 +60,7 @@ def make_post_request(user_payload, api_url, username, password):
             print(response.text)
     
     except Exception as e:
-        print(f"Connection error occured creating user {full_name}.")
+        print(f"Connection error occurred creating user {full_name}.")
         print(f"Error: {e}")
 
 def main():
