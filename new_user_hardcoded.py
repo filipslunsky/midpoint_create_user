@@ -59,7 +59,7 @@ def make_post_request(user_payload, api_url, username, password):
 
 def main():
     api_url, username, password = load_env_variables()
-    user_payload = create_user_payload("john03", "John Connor", "John", "Connor", "test.python@skynet.com")
+    user_payload = create_user_payload("john", "John Connor", "John", "Connor", "user@example.com")
     make_post_request(user_payload, api_url, username, password)
 
 if __name__ == "__main__":
